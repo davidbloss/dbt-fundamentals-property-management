@@ -6,7 +6,7 @@ units as (
 
 select
   property_id,
-  sum(rent) as total_amount,
+  sum(rent) as total_amount
 from units
 group by property_id
 having total_amount < 0
