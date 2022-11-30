@@ -6,9 +6,20 @@ sources:
     schema: property_management
     tables:
       - name: leases
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
       - name: properties
       - name: rental_applications
       - name: units
+        # NOTE: duplicate test in model 'stg_units'
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
         loaded_at_field: uploaded_at
         freshness:
           warn_after: {count: 1, period: day}
