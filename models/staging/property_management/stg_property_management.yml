@@ -48,6 +48,6 @@ models:
       - name: property_id
         description: Foreign key to stg_leases.unit_id
         tests:
-          - relationship:
-            to: ref('stg_leases')
-            field: unit_id
+          - relationships:
+              to: ref('stg_leases')
+              field: unit_id
