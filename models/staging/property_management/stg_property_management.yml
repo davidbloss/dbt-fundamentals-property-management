@@ -2,33 +2,42 @@ version: 2
 
 models:
   - name: stg_leases
+    description: Staged leases data
     columns:
       - name: id
+        description: Staged leases data
         tests:
           - unique
           - not_null
 
   - name: stg_properties
+    description: Staged properties data
     columns:
       - name: id
+        description: Primary key for properties
         tests:
           - unique
           - not_null
 
   - name: stg_rental_applications
+    description: Staged rental applications data
     columns:
       - name: id
+        description: Primary key for rental applications
         tests:
           - unique
           - not_null
 
   - name: stg_units
+    description: Staged units data
     columns:
       - name: id
+        description: Primary key for units
         tests:
           - unique
           - not_null
       - name: status
+        description: "{{ doc('units_status') }}"
         tests:
           - accepted_values:
               values:
@@ -37,6 +46,7 @@ models:
                 - rented
                 - vacant
       - name: property_id
+        description: Foreign key to stg_leases.unit_id
         tests:
           - relationship:
             to: ref('stg_leases')

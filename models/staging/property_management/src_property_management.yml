@@ -6,6 +6,7 @@ sources:
     schema: property_management
     tables:
       - name: leases
+        description: Lease data - mapping between units and rental applications
         columns:
           - name: id
             tests:
@@ -14,6 +15,7 @@ sources:
       - name: properties
       - name: rental_applications
       - name: units
+        description: Rental properties data - beds, baths, ...beyond!
         # NOTE: duplicate test in model 'stg_units'
         columns:
           - name: id
